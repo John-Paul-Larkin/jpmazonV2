@@ -1,10 +1,18 @@
 import "./SideMenu.css";
-export default function SideMenu() {
+export default function SideMenu({ showSideMenu }) {
   return (
     <div className="side-menu-container">
       <div className="opaque-background"></div>
       <div className="side-menu">
-        <i class="closeSide fa-solid fa-x"></i>
+        <i className="closeSide fa-solid fa-x" onClick={showSideMenu}></i>
+
+        <div className="side-menu-header">
+          <div className="browse">Browse JPmazon</div>
+          <div className="account">
+            <div>Jimmy Joe Bob's account</div>
+            <i className="fa-regular fa-user"></i>
+          </div>
+        </div>
       </div>
     </div>
   );

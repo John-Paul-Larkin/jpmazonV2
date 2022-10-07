@@ -5,18 +5,17 @@ import SideMenu from "./SideMenu";
 export default function MainNav() {
   const [isShowSideMenu, setIsShowSideMenu] = useState(false);
 
+  const showSideMenu = () => {
+    isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
+    console.log(isShowSideMenu);
+  };
+
   return (
     <nav className="main-nav-container">
-      {isShowSideMenu && <SideMenu />}
+      {isShowSideMenu && <SideMenu showSideMenu={showSideMenu} />}
 
       <div className="nav-top">
-        <div
-          className="burger"
-          onClick={() => {
-            isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
-            console.log(isShowSideMenu);
-          }}
-        >
+        <div className="burger" onClick={showSideMenu}>
           <i className="fa-solid fa-bars"></i>
         </div>
 
