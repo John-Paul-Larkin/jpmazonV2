@@ -7,12 +7,11 @@ export default function MainNav() {
 
   const showSideMenu = () => {
     isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
-    console.log(isShowSideMenu);
   };
 
   return (
     <nav className="main-nav-container">
-      {isShowSideMenu && <SideMenu showSideMenu={showSideMenu} />}
+      {isShowSideMenu && <SideMenu showSideMenu={showSideMenu} isShowSideMenu={isShowSideMenu} />}
 
       <div className="nav-top">
         <div className="burger" onClick={showSideMenu}>

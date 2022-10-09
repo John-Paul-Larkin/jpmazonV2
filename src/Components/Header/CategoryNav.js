@@ -2,24 +2,22 @@ import "./CategoryNav.css";
 import useFetchData from "../../Hooks/useFetchData";
 
 export default function CategoryNav() {
-  const catagories = useFetchData("https://dummyjson.com/products/categories");
+  const { data: catagories } = useFetchData("https://dummyjson.com/products/categories");
 
   return (
     <>
       <nav className="category-nav">
-        <div className="cat-nav-container">
-          {catagories && (
-            <>
-              {catagories.map((category) => {
-                return (
-                  <div className="categories" data-category={category} key={category}>
-                    {category}
-                  </div>
-                );
-              })}
-            </>
-          )}
-        </div>
+        {catagories && (
+          <div className="category-scroll">
+            {catagories.map((category) => {
+              return (
+                <div className="categories" data-category={category} key={category}>
+                  {category}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </nav>
       <div className="deliver-to-mobile">
         <i className="fa-solid fa-location-dot"></i>

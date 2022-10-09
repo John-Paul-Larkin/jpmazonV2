@@ -13,10 +13,10 @@
   position: absolute;
   min-width: 300px;
   width: 80%;
+  width: 0;
   height: 100vh;
   background-color: brown;
   overflow-y: scroll;
-  transition: 5s;
 }
 
 .side-menu-container .closeSide {
