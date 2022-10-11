@@ -1,6 +1,8 @@
 .main-nav-container .address-container,
 .currency,
-.search-container {
+.search-container,
+.all,
+.basket {
   display: none;
 }
 
@@ -10,6 +12,7 @@
   height: 99px;
   width: 100%;
   color: white;
+  /* overflow-x: hidden; */
 }
 
 .main-nav-container .nav-top {
@@ -25,6 +28,8 @@
 
 .main-nav-container .logo {
   font-weight: 600;
+  padding: 0.3em;
+  font-size: 1.5em;
 }
 
 .main-nav-container .account-mobile span {
@@ -42,8 +47,9 @@
 }
 
 .main-nav-container .fa-cart-shopping {
-  padding: 0.6em;
   padding-right: 1em;
+  font-size: 1.7em;
+  margin-left: 0.5em;
 }
 
 .main-nav-container .search-form {
@@ -58,7 +64,7 @@
 
 .main-nav-container .fa-magnifying-glass {
   color: var(--nav-primary);
-  font-size: 1.5em;
+  font-size: 1em;
   background-color: var(--search-orange-light);
   width: 44px;
   height: 44px;
@@ -77,32 +83,87 @@
   color: var(--text-grey);
 }
 
-/* 
+@media screen and (min-width: 770px) {
+  .main-nav-container .logo:hover {
+    border: 1px solid white;
+  }
 
+  .basket {
+    display: inline;
+    font-weight: 700;
+  }
 
+  .basket-container {
+    padding: 0.5em 1em;
+    margin: 0.3em;
+  }
 
+  .basket-container:hover {
+    border: 1px solid white;
+  }
 
+  .main-nav-container .burger:hover {
+    border: 1px solid white;
+  }
 
+  .main-nav-container .all {
+    display: inline;
+    padding: 0.5em;
+  }
 
+  .search-container-mobile {
+    display: none;
+  }
 
+  .search-container {
+    display: block;
+    flex-grow: 1;
+  }
 
+  .search-container .search-form {
+    width: 100%;
+  }
 
+  .search-container .search-form:focus-within {
+    border: 4px solid #ff9700;
+  }
 
+  .account-mobile {
+    display: none;
+  }
 
+  .main-nav-container {
+    height: 50px;
+  }
 
+  .flex-divider-mobile {
+    display: none;
+  }
 
- */
+  .main-nav-container .address-container {
+    display: flex;
+    padding: 0.7em;
 
-.main-nav-container {
-}
+    margin-right: 0.1em;
+    margin-left: 0.1em;
+    font-size: 0.6em;
+  }
 
-.main-nav-container {
-}
-.main-nav-container {
-}
+  .main-nav-container .address-container:hover {
+    border: 1px solid white;
+  }
 
-.main-nav-container {
-}
+  .main-nav-container .address-container i {
+    padding: 1em;
+  }
 
-.main-nav-container {
+  .main-nav-container .address-container .address {
+    font-size: 1.2em;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .main-nav-container .address-container .deliver-to {
+    white-space: nowrap;
+  }
 }

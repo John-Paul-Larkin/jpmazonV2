@@ -2,8 +2,6 @@ import "./SideMenu.css";
 export default function SideMenu({ showSideMenu, isShowSideMenu }) {
   return (
     <div className={"side-menu-container"}>
-      <div className="opaque-background"></div>
-
       <div className={isShowSideMenu ? "side-menu transition" : "side-menu"}>
         <i className="closeSide fa-solid fa-x" onClick={showSideMenu}></i>
 
@@ -15,6 +13,7 @@ export default function SideMenu({ showSideMenu, isShowSideMenu }) {
           </div>
         </div>
       </div>
+      {isShowSideMenu && <div className="opaque-background" onClick={showSideMenu}></div>}
     </div>
   );
 }

@@ -1,0 +1,29 @@
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-card {
+  width: 200px;
+  height: 200px;
+  background-color: beige;
+  border: 1px solid black;
+  margin: 5px;
+  margin-bottom: 30px;
+}
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.product-card-container .title {
+  position: absolute;
+  color: azure;
+  top: -0.7em;
+  left: -0.3em;
+  background-color: blue;
+  padding: 4px;
+  border: 1px solid white;
+}

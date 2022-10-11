@@ -34,3 +34,39 @@ export default function useFetchData(URL) {
   }, [URL]);
   return { data, error };
 }
+
+/* .test {
+  background-image: url("../../Assets/prime.jpg");
+} */
+
+/* .body-container {
+  background-image: url("../../Assets/prime.jpg");
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #1994f3; */
+/*
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: clamp(100%, 150%, 200%);
+
+  max-width: 1500px;
+  min-width: 1200px;
+  margin: 0 auto;
+  height: 100vh; */
+
+/*
+.test {
+  position: absolute;
+}
+
+.test2 {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 430px) {
+  .body-container {
+    background-size: clamp(80%, 150%, 170%);
+  }
+} */
