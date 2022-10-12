@@ -1,7 +1,9 @@
 .main-body {
-  height: 4000px;
+  height: 2400px;
   max-width: 1500px;
-  /* min-width: 1200px; */
-  background-color: #1798fe;
+
+  /* background-color: #1798fe; */
+  background-image: linear-gradient(to bottom, #1798fe, #7ec3f7);
+
   margin: 0 auto;
 }

@@ -1,0 +1,79 @@
+.product-rectangle-first {
+  height: 420px;
+  width: 100%;
+  /* background-color: azure; */
+  display: flex;
+}
+
+.rectangle-box {
+  margin: 0 10px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  /* border: 5px solid yellow; */
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  /* align-items: start; */
+  justify-items: start;
+}
+
+.rectangle-box .individual-image {
+  max-height: 200px;
+  height: 100%;
+  /* border: 4px solid red; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  object-fit: fill;
+}
+
+.product-title {
+  /* position: absolute;
+  max-width: 30%; */
+  flex-grow: 0;
+}
+
+.rectangle-box img {
+  /* max-height: 100%; */
+  flex-grow: 1;
+}
+
+.one,
+.two {
+  position: relative;
+}
+
+.one::before {
+  content: "Deals for you";
+  position: absolute;
+  top: -1.5em;
+  /* color: aliceblue; */
+}
+
+.two::before {
+  content: "Recommended";
+  position: absolute;
+  top: -1.5em;
+}
+
+@media (max-width: 480px) {
+  .rectangle-box.three {
+    display: none;
+  }
+  .rectangle-box.two {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .rectangle-box.two {
+    display: none;
+  }
+  /* .rectangle-box.three {
+    display: none;
+  } */
+}

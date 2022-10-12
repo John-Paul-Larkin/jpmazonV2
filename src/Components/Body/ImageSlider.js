@@ -17,7 +17,7 @@ export default function ImageSlider() {
     currentIndex == 0 ? setCurrentIndex(1) : setCurrentIndex(0);
   };
 
-  setInterval(changeIndex, 2000);
+  // setInterval(changeIndex, 2000);
 
   const styles = {
     backgroundImage: `url(${slides[currentIndex].url})`,
@@ -27,6 +27,8 @@ export default function ImageSlider() {
     maxWidth: "100%",
     minWidth: "430px",
     height: "30vh",
+    minHeight: "50px",
+    objectFit: "cover",
     backgroundColor: "#1798fe",
   };
 

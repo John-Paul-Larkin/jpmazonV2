@@ -27,7 +27,8 @@
 }
 
 .main-nav-container .logo {
-  font-weight: 600;
+  font-family: "EmberBD";
+
   padding: 0.3em;
   font-size: 1.5em;
 }

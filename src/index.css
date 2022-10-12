@@ -12,7 +12,8 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; */
+  font-family: "Ember";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -20,7 +21,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; */
 }
 
 /* reset */
@@ -52,4 +53,14 @@ img,
 picture {
   max-width: 100%;
   display: block;
+}
+
+@font-face {
+  font-family: "Ember";
+  src: url("./Assets/Font/AmazonEmber_Rg.ttf");
+}
+
+@font-face {
+  font-family: "EmberBD";
+  src: url("./Assets/Font/AmazonEmber_Bd.ttf");
 }

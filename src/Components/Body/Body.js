@@ -2,11 +2,11 @@ import "./Body.css";
 import ImageSlider from "./ImageSlider";
 import RecommendedPage from "./RecommendedPage";
 
-export default function Body() {
+export default function Body({ products }) {
   return (
     <div className="main-body">
       <ImageSlider />
-      <RecommendedPage />
+      <RecommendedPage products={products} />
     </div>
   );
 }
