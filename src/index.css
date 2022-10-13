@@ -8,6 +8,7 @@
   --text-grey: #544949;
   --search-orange: #f3a847;
   --search-orange-light: #fbbb6a;
+  --min-screen-size: 350px;
 }
 
 body {

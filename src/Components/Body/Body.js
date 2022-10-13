@@ -10,3 +10,4 @@ export default function Body({ products }) {
     </div>
   );
 }
+// ../../Assets/moroccan-flower-dark.webp

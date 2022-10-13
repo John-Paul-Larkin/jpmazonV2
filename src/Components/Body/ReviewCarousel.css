@@ -1,0 +1,69 @@
+.review-carousel {
+  height: 420px;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.review-carousel-container {
+  position: relative;
+}
+
+.review-carousel-container::before {
+  position: absolute;
+  top: -1.5em;
+  content: "Explore more items";
+  background-color: white;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.review-carousel .box {
+  height: 390px;
+  width: 170px;
+  min-width: 170px;
+  /* background-color: brown; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.review-carousel .box img {
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.review-carousel .box .product-description:hover {
+  color: #cb514a;
+}
+
+.review-carousel .euro {
+  position: relative;
+}
+
+.review-carousel .euro::before {
+  position: absolute;
+  content: "EUR";
+  font-size: 0.65em;
+
+  left: -2em;
+}
+/* 
+.swiper-button-next {
+  border: 3px solid black !important;
+  padding: 1em !important;
+  border-radius: 5px !important;
+  top: 20rem !important;
+}
+
+.swiper-button-prev {
+  border: 3px solid black !important;
+  padding: 1em !important;
+  border-radius: 5px !important;
+  top: 20rem !important;
+} */

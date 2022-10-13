@@ -1,7 +1,6 @@
 .product-rectangle-first {
   height: 420px;
   width: 100%;
-  /* background-color: azure; */
   display: flex;
 }
 
@@ -14,7 +13,6 @@
   display: grid;
   gap: 5px;
   grid-template-columns: 1fr 1fr;
-  /* align-items: start; */
   justify-items: start;
 }
 
@@ -31,33 +29,45 @@
   object-fit: fill;
 }
 
-.product-title {
-  /* position: absolute;
-  max-width: 30%; */
-  flex-grow: 0;
-}
-
 .rectangle-box img {
-  /* max-height: 100%; */
   flex-grow: 1;
+  padding: 10px;
 }
 
-.one,
-.two {
+.rectangle-box.one,
+.two,
+.three {
   position: relative;
 }
 
-.one::before {
+.rectangle-box.one::before {
   content: "Deals for you";
   position: absolute;
   top: -1.5em;
-  /* color: aliceblue; */
+  background-color: white;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom: 2px solid black;
 }
 
-.two::before {
+.rectangle-box.two::before {
   content: "Recommended";
   position: absolute;
   top: -1.5em;
+  background-color: white;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+.rectangle-box.three::before {
+  content: "Trending";
+  position: absolute;
+  top: -1.5em;
+  background-color: white;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom: 2px solid black;
 }
 
 @media (max-width: 480px) {

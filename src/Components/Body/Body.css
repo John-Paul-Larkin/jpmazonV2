@@ -1,9 +1,24 @@
 .main-body {
   height: 2400px;
   max-width: 1500px;
-
-  /* background-color: #1798fe; */
-  background-image: linear-gradient(to bottom, #1798fe, #7ec3f7);
-
+  min-width: var(--min-screen-size);
   margin: 0 auto;
+
+  background-image: linear-gradient(to bottom, rgb(23, 152, 254), #b9d8ef);
+  /* background-color: #1798fe; */
+
+  position: relative;
+}
+
+.main-body-2 {
+  /* background-image: url("../../Assets/moroccan-flower-dark.webp"); */
+  position: absolute;
+  height: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+
+  /* background-color: rgba(23, 152, 254, 0.9); */
+  /* #7ec3f7 */
 }
