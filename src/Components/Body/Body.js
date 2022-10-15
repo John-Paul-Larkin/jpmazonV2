@@ -2,12 +2,19 @@ import "./Body.css";
 import ImageSlider from "./ImageSlider";
 import RecommendedPage from "./RecommendedPage";
 
-export default function Body({ products }) {
+import useFetchData from "../../Hooks/useFetchData";
+
+export default function Body() {
+  const { data: returned } = useFetchData("https://dummyjson.com/products?limit=100");
+
   return (
-    <div className="main-body">
-      <ImageSlider />
-      <RecommendedPage products={products} />
+    <div>
+      {returned && (
+        <div className="main-body">
+          <ImageSlider />
+          <RecommendedPage products={returned.products} />
+        </div>
+      )}
     </div>
   );
 }
-// ../../Assets/moroccan-flower-dark.webp

@@ -9,6 +9,7 @@
   --search-orange: #f3a847;
   --search-orange-light: #fbbb6a;
   --min-screen-size: 350px;
+  --max-body-width: 1500px;
 }
 
 body {

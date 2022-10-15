@@ -28,7 +28,7 @@
   min-width: 170px;
   /* background-color: brown; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   cursor: pointer;
 }
@@ -46,13 +46,31 @@
   position: relative;
 }
 
-.review-carousel .euro::before {
-  position: absolute;
-  content: "EUR";
-  font-size: 0.65em;
-
-  left: -2em;
+.review-carousel .price {
+  display: flex;
 }
+
+.review-carousel .eur {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.65em;
+}
+
+.review-carousel .get-item-by {
+  font-size: 0.7em;
+  padding: 3px 0;
+}
+
+.review-carousel .left-in-stock {
+  font-size: 0.7em;
+  padding: 3px 0;
+}
+
+.review-carousel .rating {
+  font-size: 0.7em;
+  padding: 3px 0;
+}
+
 /* 
 .swiper-button-next {
   border: 3px solid black !important;

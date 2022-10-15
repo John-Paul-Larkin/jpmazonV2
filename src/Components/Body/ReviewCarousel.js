@@ -7,6 +7,7 @@ import { Navigation } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import { useNavigate } from "react-router-dom";
 
 const limitDescription = (description) => {
   return description.slice(0, 90) + "...";
@@ -17,7 +18,7 @@ const productPrice = (price) => {
   //Added ten here so there will be no number below 10, which would be single digit €12.8 instead €12.80
 };
 
-const furtherInfo = (stock) => {
+const getItemBy = () => {
   const today = new Date();
 
   const howManyDayForDelivery = Math.floor(Math.random() * 5) + 1;
@@ -31,19 +32,49 @@ const furtherInfo = (stock) => {
   return "Get it as soon as " + deliveryDate;
 };
 
+const leftInStock = (stock) => {
+  if (stock < 10) {
+    return `Only ${stock} left in stock.`;
+  } else if (stock < 50) {
+    return `${stock} in stock.`;
+  } else if (stock > 50) {
+    return `50+ in stock.`;
+  }
+
+  // had planned to do if less then, but numbers all too high
+};
+
 export default function ReviewCarousel({ products }) {
+  const navigate = useNavigate();
+  const navigateTo = (url) => {
+    navigate(url);
+  };
+
   return (
     <div className="review-carousel-container">
       <div className="review-carousel">
-        <Swiper modules={[Navigation]} navigation spaceBetween={10} slidesPerView={3} onSlideChange={() => {}} onSwiper={(swiper) => {}}>
+        <Swiper modules={[Navigation]} navigation spaceBetween={10} slidesPerView={"auto"} onSlideChange={() => {}} onSwiper={(swiper) => {}}>
           {products.map((product) => {
             return (
-              <SwiperSlide className="box" key={product.id}>
-                <img src={product.images[0]} />
+              <SwiperSlide
+                key={product.id}
+                className="box"
+                data-id={product.id}
+                onClick={(e) => {
+                  // console.log(e.target.parentElement.dataset.id);
+                  const id = e.target.parentElement.dataset.id;
+                  navigateTo(`/product/${id}`);
+                }}
+              >
+                <img src={product.thumbnail} />
                 <div className="product-description">{limitDescription(product.description)}</div>
-                <StarRating rating={product.rating} />
-                <div className="euro">{productPrice(product.price)}</div>
-                <div>{furtherInfo(product.stock)}</div>
+                <StarRating className="rating" rating={product.rating} />
+                <div className="price">
+                  <span className="eur">EUR</span>
+                  <span className="euro">{productPrice(product.price)}</span>
+                </div>
+                <div className="get-item-by">{getItemBy()}</div>
+                <div className="left-in-stock">{leftInStock(product.stock)}</div>
               </SwiperSlide>
             );
           })}

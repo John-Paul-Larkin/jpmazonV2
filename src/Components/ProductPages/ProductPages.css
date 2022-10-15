@@ -1,0 +1,5 @@
+.product-page-container {
+  max-width: var(--max-body-width);
+  min-width: var(--min-screen-size);
+  margin: 0 auto;
+}

@@ -6,18 +6,47 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
 }
+
+.side-menu-container {
+  color: black;
+}
+
 .side-menu-container .side-menu {
-  z-index: 2;
+  z-index: 12;
   visibility: hidden;
 
   height: 100vh;
-  background-color: brown;
+  background-color: white;
 
   position: fixed;
   width: 300px;
   left: -300px;
+}
+
+.side-menu-container .side-links {
+  border-bottom: 1px solid #d5dbdb;
+}
+
+.side-menu-container .category-side {
+  border-bottom: 1px solid #d5dbdb;
+  height: 30em;
+}
+
+.side-menu-container h2 {
+  padding: 1em;
+  padding-left: 20px;
+  color: black;
+}
+
+.side-menu-container .side-links div {
+  padding: 1em;
+  padding-left: 20px;
+}
+
+.side-menu-container .sideLinks div:last-child {
+  padding-bottom: 2em;
 }
 
 .side-menu-container .transition {
@@ -33,6 +62,7 @@
   font-size: 1.5rem;
   top: 2em;
   right: -3em;
+  color: white;
 }
 
 .side-menu-container .side-menu-header {
@@ -40,11 +70,12 @@
   background-color: var(--nav-primary);
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 .side-menu-container .account {
   width: 50%;
-  font-size: 0.7em;
+  font-size: 0.8em;
   margin-top: 1em;
   display: flex;
   justify-content: baseline;

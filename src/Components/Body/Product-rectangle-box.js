@@ -1,11 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
 export default function ProductRectangleBox({ products, box }) {
+  const navigate = useNavigate();
+  const navigateTo = (url) => {
+    navigate(url);
+  };
+
   return (
     <div className={"rectangle-box " + box}>
       {products.map((product) => {
         return (
-          <div className="individual-image" key={product.id}>
-            <img src={product.images[0]} />
-            {/* <div className="product-title">{product.title}</div> */}
+          <div
+            className="individual-image"
+            key={product.id}
+            onClick={() => {
+              console.log("ss");
+              navigateTo(`/product/${product.id}`);
+            }}
+          >
+            <img src={product.thumbnail} />
           </div>
         );
       })}

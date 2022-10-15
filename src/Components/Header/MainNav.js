@@ -2,12 +2,19 @@ import { useState } from "react";
 import "./MainNav.css";
 import SideMenu from "./SideMenu";
 
+import { Link } from "react-router-dom";
+
 export default function MainNav() {
   const [isShowSideMenu, setIsShowSideMenu] = useState(false);
 
   const showSideMenu = () => {
     isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
   };
+
+  // const navigate = useNavigate();
+  // const navigateTo = (url) => {
+  //   navigate(url);
+  // };
 
   return (
     <nav className="main-nav-container">
@@ -19,7 +26,9 @@ export default function MainNav() {
           <span className="all">All</span>
         </div>
 
-        <div className="logo">JPmazon.ie</div>
+        <Link to="/" style={{ color: "white", textDecoration: "none" }} className="logo">
+          JPmazon.ie
+        </Link>
         <div className="flex-divider-mobile"></div>
         <div className="account-mobile">
           <span>Jimmy Joe Bob </span>
@@ -30,7 +39,7 @@ export default function MainNav() {
           <i className="fa-solid fa-location-dot"></i>
           <div>
             <div className="deliver-to">Deliver to Jimmy Joe Bob</div>
-            <div className="address">The shire B17</div>
+            <div className="address">The shire N17</div>
           </div>
         </div>
         <div className="search-container">

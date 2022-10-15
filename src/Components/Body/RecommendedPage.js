@@ -31,7 +31,7 @@ export default function RecommendedPage({ products }) {
       <br />
       <br />
       <br />
-      <ReviewCarousel products={productArray.splice(0, 10)} />
+      <ReviewCarousel products={productArray.splice(0, 18)} />
     </div>
   );
 }

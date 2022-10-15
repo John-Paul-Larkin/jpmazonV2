@@ -8,6 +8,7 @@
   margin: 0 10px;
   height: 100%;
   width: 100%;
+  min-width: var(--min-screen-size);
   background-color: white;
   /* border: 5px solid yellow; */
   display: grid;
@@ -27,7 +28,25 @@
   flex-direction: column;
   background-color: white;
   object-fit: fill;
+  cursor: pointer;
+  position: relative;
 }
+/* 
+.rectangle-box .product-title-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;         This was an attempt to make product title
+  display: flex;              visible on image hover
+  align-items: center;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.rectangle-box .product-title-container:hover {
+  background-color: blue;
+  visibility: visible;
+}
+ */
 
 .rectangle-box img {
   flex-grow: 1;
@@ -70,7 +89,7 @@
   border-bottom: 2px solid black;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .rectangle-box.three {
     display: none;
   }
@@ -79,7 +98,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .rectangle-box.two {
     display: none;
   }

@@ -21,7 +21,7 @@ export default function CategoryNav() {
       </nav>
       <div className="deliver-to-mobile">
         <i className="fa-solid fa-location-dot"></i>
-        <div>Deliver to Jimmy Joe Bob - The shire B17</div>
+        <div>Deliver to Jimmy Joe Bob - The shire N17</div>
       </div>
     </>
   );
