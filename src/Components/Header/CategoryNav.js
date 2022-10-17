@@ -1,5 +1,6 @@
 import "./CategoryNav.css";
 import useFetchData from "../../Hooks/useFetchData";
+import { startCase } from "lodash";
 
 export default function CategoryNav() {
   const { data: catagories } = useFetchData("https://dummyjson.com/products/categories");
@@ -12,7 +13,7 @@ export default function CategoryNav() {
             {catagories.map((category) => {
               return (
                 <div className="categories" data-category={category} key={category}>
-                  {category}
+                  {startCase(category)}
                 </div>
               );
             })}

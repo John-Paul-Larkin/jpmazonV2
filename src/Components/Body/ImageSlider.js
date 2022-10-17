@@ -1,8 +1,7 @@
 import "./ImageSlider.css";
-import { useState } from "react";
-import prime from "../../Assets/prime.jpg";
-import prime2 from "../../Assets/prime2.jpg";
-import offJP from "../../Assets/100Off.jpg";
+import imgJPinterview from "../../Assets/primeInterview.png";
+import sliderImg2 from "../../Assets/prime2.jpg";
+import imgVan from "../../Assets/primeVan.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
@@ -13,9 +12,9 @@ import "swiper/css/navigation";
 
 export default function ImageSlider() {
   const slides = [
-    { url: prime, title: "prime" },
-    { url: offJP, title: "OffJP" },
-    { url: prime2, title: "prime2" },
+    { url: imgJPinterview, title: "img1" },
+    // { url: sliderImg2, title: "img2" },
+    { url: imgVan, title: "img3" },
   ];
 
   return (

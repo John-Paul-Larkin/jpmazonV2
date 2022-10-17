@@ -27,14 +27,64 @@
   display: inline;
 }
 
-.buy-it-box {
+.buy-it-box .details-container {
+  margin-left: 1em;
+}
+
+.buy-it-box .price-container,
+.rrp,
+.deliver-to,
+.stock {
+  padding: 1em;
+}
+
+.buy-it-box .discount {
+  padding-right: 1em;
+}
+.buy-it-box .get-item-by {
+  padding-left: 1em;
+  font-size: 1.3em;
+  color: var(--orange-hightlight);
+}
+
+.buy-it-box .quantity {
+  padding: 0.7em;
+}
+
+.buy-it-box .details-container-2 i {
+  margin-left: 1em;
+}
+.buy-it-box .details-container-2 i {
+  margin-right: 1em;
+}
+
+.buy-it-box .c1 {
+  display: inline-block;
+  width: 150px;
+  color: var(--text-grey);
+}
+
+.buy-it-box .dispatch div {
+  margin: 1em;
+}
+
+.buy-it-box .returnable {
+  display: inline-block;
+  width: 200px;
+}
+
+.buy-it-box .prime {
+  border-radius: 11px;
+  margin: 1em;
+  width: calc(100% - 2em);
+  font-size: 1.2em;
+  height: 2.7em;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px grey;
 }
 
 .buy-it-box {
 }
-.buy-it-box {
-}
-.buy-it-box {
-}
+
 .buy-it-box {
 }

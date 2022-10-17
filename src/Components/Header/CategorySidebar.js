@@ -1,7 +1,21 @@
+import "./CategorySidebar.css";
 import useFetchData from "../../Hooks/useFetchData";
+import { startCase } from "lodash";
 
 export default function CategorySidebar() {
-  let { data: catagories } = useFetchData("https://dummyjson.com/products/categories");
+  let { data: categories } = useFetchData("https://dummyjson.com/products/categories");
+  if (categories) console.log(categories);
 
-  return <div></div>;
+  return (
+    <div className="category-side-bar">
+      {categories &&
+        categories.map((category, index) => {
+          return (
+            <div key={index} className="category">
+              {startCase(category)}
+            </div>
+          );
+        })}
+    </div>
+  );
 }

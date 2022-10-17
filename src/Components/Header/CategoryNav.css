@@ -22,6 +22,12 @@
   overflow: auto;
 }
 
+@media (min-width: 2300px) {
+  .category-nav .category-scroll {
+    justify-content: center;
+  }
+}
+
 .category-nav .categories {
   white-space: nowrap;
   margin-right: 0.5em;

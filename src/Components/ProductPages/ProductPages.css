@@ -71,3 +71,38 @@
 .product-page-container .main-image img {
   width: 100vw !important;
 }
+
+@media (min-width: 1260px) {
+  .product-page-container {
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+  }
+
+  .images-container {
+    width: 768px;
+    order: 0;
+    /* min-width: 700px; */
+  }
+
+  .product-page-container .buy-it-box {
+    width: 500px;
+    /* border: 1px solid grey; */
+    order: 1;
+    height: 710px;
+    flex-grow: 1;
+    /* min-width: 700px; */
+  }
+
+  .product-page-container .title-rating-container {
+    order: 2;
+  }
+
+  .product-page-container .description-container {
+    order: 4;
+  }
+}
+
+/* small screens */
+@media (min-width: 768px) {
+}

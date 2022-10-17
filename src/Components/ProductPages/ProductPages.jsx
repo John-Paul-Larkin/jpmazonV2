@@ -44,8 +44,6 @@ export default function ProductPages() {
             </div>
             <div>{product.description}</div>
           </div>
-
-          {/* <img src={product.thumbnail} /> */}
           <br />
           <div className="images-container">
             {" "}
@@ -74,7 +72,7 @@ export default function ProductPages() {
             <p className="description">
               <span>
                 This is truly an amazing product. Although there are many competitors in the generic product category, this generic product, in particular, is the best that money can buy. It is perfectly sized,
-                compact enough to store away, yet large enough that it will be just right for the job at hand. It is also made from a NASA researched, space age material, making it light enough to pop in your
+                compact enough to store away, yet large enough that it wont get lost down the back of the couch. It is also made from a NASA researched, space age material, making it light enough to pop in your
                 bun-bag, yet heavy enough that you could use it to bonk a bear on the head.
                 <br />
               </span>
