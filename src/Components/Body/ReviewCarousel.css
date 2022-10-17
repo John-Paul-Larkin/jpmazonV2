@@ -71,17 +71,15 @@
   padding: 3px 0;
 }
 
-/* 
-.swiper-button-next {
-  border: 3px solid black !important;
-  padding: 1em !important;
-  border-radius: 5px !important;
-  top: 20rem !important;
+.review-carousel .rating span {
+  font-size: 0.8em;
+  padding: 3px;
 }
 
-.swiper-button-prev {
-  border: 3px solid black !important;
-  padding: 1em !important;
-  border-radius: 5px !important;
-  top: 20rem !important;
-} */
+.review-carousel .rating div {
+  color: var(--nav-secondary);
+}
+
+.review-carousel .rating div:hover {
+  color: #cb514a;
+}

@@ -12,7 +12,9 @@ export default function Body() {
       {returned && (
         <div className="main-body">
           <ImageSlider />
+          <div className="stretcher"></div>
           <RecommendedPage products={returned.products} />
+          
         </div>
       )}
     </div>

@@ -1,8 +1,9 @@
 /* Variables */
 
 :root {
-  --nav-primary: #232f3e;
-  --nav-secondary: #37475a;
+  --nav-primary: hsl(213, 28%, 19%);
+  --nav-secondary: hsl(213, 24%, 28%);
+  --nav-third: hsl(213, 19%, 35%);
   --background-grey: #eaeded;
   --background-grey-highlight: #dadada;
   --text-grey: #544949;

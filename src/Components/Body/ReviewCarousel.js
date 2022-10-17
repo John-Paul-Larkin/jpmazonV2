@@ -56,25 +56,23 @@ export default function ReviewCarousel({ products }) {
         <Swiper modules={[Navigation]} navigation spaceBetween={10} slidesPerView={"auto"} onSlideChange={() => {}} onSwiper={(swiper) => {}}>
           {products.map((product) => {
             return (
-              <SwiperSlide
-                key={product.id}
-                className="box"
-                data-id={product.id}
-                onClick={(e) => {
-                  // console.log(e.target.parentElement.dataset.id);
-                  const id = e.target.parentElement.dataset.id;
-                  navigateTo(`/product/${id}`);
-                }}
-              >
-                <img src={product.thumbnail} />
-                <div className="product-description">{limitDescription(product.description)}</div>
-                <StarRating className="rating" rating={product.rating} />
-                <div className="price">
-                  <span className="eur">EUR</span>
-                  <span className="euro">{productPrice(product.price)}</span>
+              <SwiperSlide key={product.id} className="box">
+                <div
+                  onClick={() => {
+                    const id = product.id;
+                    navigateTo(`/product/${id}`);
+                  }}
+                >
+                  <div className="product-description">{limitDescription(product.description)}</div>
+                  <img src={product.thumbnail} />
+                  <StarRating className="rating" rating={product.rating} />
+                  <div className="price">
+                    <span className="eur">EUR</span>
+                    <span className="euro">{productPrice(product.price)}</span>
+                  </div>
+                  <div className="get-item-by">{getItemBy()}</div>
+                  <div className="left-in-stock">{leftInStock(product.stock)}</div>
                 </div>
-                <div className="get-item-by">{getItemBy()}</div>
-                <div className="left-in-stock">{leftInStock(product.stock)}</div>
               </SwiperSlide>
             );
           })}

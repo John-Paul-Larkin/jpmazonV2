@@ -1,0 +1,26 @@
+.footer {
+  color: white;
+}
+
+.footer .footer-top {
+  height: 50px;
+  background-color: var(--nav-secondary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-top:hover {
+  background-color: hsl(213, 19%, 35%);
+}
+
+.footer .footer-middle {
+  background-color: var(--nav-primary);
+  height: 50px;
+}
+
+.footer .footer-bottom {
+  height: 200px;
+  background-color: #131a22;
+}

@@ -8,9 +8,12 @@ export default function StarRating({ rating }) {
   }
   //crete boolean array for each star value
 
+  const randomNumberRatings = () => {
+    return Math.floor(Math.random() * 1000);
+  };
+
   return (
     <div className="rating">
-      {rating}
       {starArray.map((star, index) => {
         if (star) {
           return <i className="fa-solid fa-star orangeStar" key={index}></i>;
@@ -18,6 +21,8 @@ export default function StarRating({ rating }) {
           return <i className="fa-solid fa-star whiteStar" key={index}></i>;
         }
       })}
+      <span>{rating}</span>
+      <div>{randomNumberRatings()} reviews</div>
     </div>
   );
 }

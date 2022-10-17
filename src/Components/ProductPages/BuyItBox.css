@@ -1,0 +1,40 @@
+.buy-it-box .add-to-basket {
+  background-color: hsl(50, 100%, 54%);
+  box-shadow: 1px 1px 1px hsl(50, 100%, 54%);
+  display: block;
+  border-radius: 11px;
+  margin: 1em;
+  width: calc(100% - 2em);
+  font-size: 1.2em;
+  height: 2.7em;
+}
+
+.buy-it-box .buy-now {
+  background-color: hsl(36, 100%, 55%);
+  box-shadow: 1px 1px 1px hsl(36, 100%, 55%);
+  display: block;
+  border-radius: 11px;
+  margin: 1em;
+  width: calc(100% - 2em);
+  font-size: 1.2em;
+  height: 2.7em;
+}
+.buy-it-box .old-price {
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: line-through;
+}
+.buy-it-box .deliver-to i {
+  display: inline;
+}
+
+.buy-it-box {
+}
+
+.buy-it-box {
+}
+.buy-it-box {
+}
+.buy-it-box {
+}
+.buy-it-box {
+}
