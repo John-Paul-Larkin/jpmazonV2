@@ -5,7 +5,7 @@
   margin: 0 auto;
 
   background-image: linear-gradient(to bottom, rgb(23, 152, 254), #b9d8ef);
-  /* background-color: #1798fe; */
+  overflow: hidden;
 
   position: relative;
 }
