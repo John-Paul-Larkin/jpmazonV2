@@ -4,8 +4,6 @@ export default function useFetchData(URL) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const controller = new AbortController();
-
   useEffect(() => {
     const controller = new AbortController();
 
