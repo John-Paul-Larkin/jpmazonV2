@@ -21,7 +21,6 @@ export default function useFetchData(URL) {
       } catch (err) {
         if (err.name === "AbortError") {
           console.log("The fetch was aborted");
-          console.log(controller);
         } else {
           setError("Could not fetch the data");
         }

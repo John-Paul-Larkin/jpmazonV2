@@ -1,10 +1,12 @@
-import "./App.css";
-import Header from "./Components/Header/Header";
-import Body from "./Components/Body/Body";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import "./App.css";
+
+import Body from "./Components/Body/Body";
+import Header from "./Components/Header/Header";
 import ProductPages from "./Components/ProductPages/ProductPages";
 import Footer from "./Components/Footer/Footer";
-import Test from "./Components/Body/Test";
+import CategoryPage from "./Components/ProductPages/CategoryPage";
 
 function App() {
   return (
@@ -12,9 +14,9 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" eaxact element={<Body />} />
-          <Route path="/product/test" element={<Test />} />
+          <Route path="/" exact element={<Body />} />
           <Route path="/product/:id" element={<ProductPages />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>
 
         <Footer />

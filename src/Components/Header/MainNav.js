@@ -11,10 +11,6 @@ export default function MainNav() {
     isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
   };
 
-  // const navigate = useNavigate();
-  // const navigateTo = (url) => {
-  //   navigate(url);
-  // };
 
   return (
     <nav className="main-nav-container">

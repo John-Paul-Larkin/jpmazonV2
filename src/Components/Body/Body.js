@@ -7,8 +7,6 @@ import useFetchData from "../../Hooks/useFetchData";
 export default function Body() {
   const { data: returned } = useFetchData("https://dummyjson.com/products?limit=100");
 
-  // console.log(returned);
-
   return (
     <div>
       {returned && (

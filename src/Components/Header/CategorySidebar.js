@@ -4,7 +4,6 @@ import { startCase } from "lodash";
 
 export default function CategorySidebar() {
   let { data: categories } = useFetchData("https://dummyjson.com/products/categories");
-  if (categories) console.log(categories);
 
   return (
     <div className="category-side-bar">

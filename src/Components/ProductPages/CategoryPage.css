@@ -1,0 +1,42 @@
+.category-page {
+  max-width: var(--max-body-width);
+}
+
+.category-page-individual-container {
+  /* min-height: 200px; */
+  min-width: 350px;
+  max-width: 500px;
+
+  padding: 2em 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid grey;
+}
+
+.category-page-individual-container .title {
+  text-align: center;
+}
+
+.category-heading {
+  text-align: center;
+  color: blue;
+}
+
+.category-page-individual-container .title {
+  font-size: 1.5em;
+}
+
+.category-page-individual-container .rating {
+  font-size: 0.8em;
+}
+
+.category-page-individual-container .rating span {
+  margin-left: 1em;
+}
+
+@media (min-width: 530px) {
+  .category-page-individual-container {
+  }
+}
