@@ -1,6 +1,5 @@
 .main-nav-container .address-container,
 .currency,
-.search-container,
 .all,
 .basket {
   display: none;
@@ -12,6 +11,7 @@
   height: 99px;
   width: 100%;
   color: white;
+
   /* overflow-x: hidden; */
 }
 
@@ -112,9 +112,9 @@
     padding: 0.5em;
   }
 
-  .search-container-mobile {
+  /* .search-container-mobile {
     display: none;
-  }
+  } */
 
   .search-container {
     display: block;
@@ -168,3 +168,27 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 770px) {
+  .main-nav-container .nav-top {
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    order: 6;
+    min-width: 100vw;
+  }
+
+  .main-nav-container .nav-top {
+    height: 99px;
+  }
+}
+/* 
+
+.search-container::after {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  content: "das";
+  display: inline-block;
+} */

@@ -18,7 +18,7 @@ export default function CategoryPage() {
   }
   return (
     <div className="category-page">
-      <div classname="category-heading"> {category}</div>
+      <div className="category-heading"> {category}</div>
       {data &&
         data.products.map((product) => {
           return (

@@ -1,16 +1,27 @@
 import { useState } from "react";
 import "./MainNav.css";
 import SideMenu from "./SideMenu";
+import useFetchData from "../../Hooks/useFetchData";
 
 import { Link } from "react-router-dom";
 
 export default function MainNav() {
   const [isShowSideMenu, setIsShowSideMenu] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const { data: searchResult } = useFetchData(`https://dummyjson.com/products/search?q=${searchTerm}`);
+
+  console.log(searchResult);
+
+  const searchInput = (e) => {
+    const searchFor = e.target.value;
+    setSearchTerm(searchFor);
+  };
+
   const showSideMenu = () => {
     isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
   };
-
 
   return (
     <nav className="main-nav-container">
@@ -38,9 +49,10 @@ export default function MainNav() {
             <div className="address">The shire N17</div>
           </div>
         </div>
+
         <div className="search-container">
           <form className="search-form">
-            <input className="input" type="text" placeholder="  Search JPmazon.ie" />
+            <input className="input" type="text" value={searchTerm} placeholder="  Search JPmazon.ie" onChange={searchInput} />
             <div className="magnifying-glass">
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
@@ -51,14 +63,6 @@ export default function MainNav() {
           <i className="fa-solid fa-cart-shopping"></i>
           <div className="basket">Basket</div>
         </div>
-      </div>
-      <div className="search-container-mobile">
-        <form className="search-form">
-          <input className="input" type="text" placeholder="  Search JPmazon.ie" />
-          <div className="magnifying-glass">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </div>
-        </form>
       </div>
     </nav>
   );
