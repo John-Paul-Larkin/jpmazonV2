@@ -18,7 +18,7 @@ export default function ProductRectangleBox({ products, box }) {
               navigateTo(`/product/${product.id}`);
             }}
           >
-            <img src={product.thumbnail} />
+            <img src={product.thumbnail} alt="thumnail" />
           </div>
         );
       })}

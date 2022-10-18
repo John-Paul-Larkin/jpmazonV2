@@ -63,7 +63,7 @@ export default function Footer() {
           {/* <div>🌐 Anglaise</div> */}
           <div> € EUR - Euro</div>
           <div className="irl">
-            <img src={flag} />
+            <img src={flag} alt="Irish flag"/>
             Ireland
           </div>
         </div>

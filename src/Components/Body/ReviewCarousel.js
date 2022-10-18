@@ -64,7 +64,7 @@ export default function ReviewCarousel({ products }) {
                   }}
                 >
                   <div className="product-description">{limitDescription(product.description)}</div>
-                  <img src={product.thumbnail} />
+                  <img src={product.thumbnail} alt="thumbnail" />
                   <StarRating className="rating" rating={product.rating} />
                   <div className="price">
                     <span className="eur">EUR</span>

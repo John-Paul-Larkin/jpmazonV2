@@ -38,6 +38,7 @@
 
 .category-nav .categories:hover {
   color: var(--search-orange);
+  cursor: pointer;
 }
 
 .category-nav .categories:first-child {

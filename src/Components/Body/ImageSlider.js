@@ -1,6 +1,5 @@
 import "./ImageSlider.css";
 import imgJPinterview from "../../Assets/primeInterview.png";
-import sliderImg2 from "../../Assets/prime2.jpg";
 import imgVan from "../../Assets/primeVan.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,18 +12,18 @@ import "swiper/css/navigation";
 export default function ImageSlider() {
   const slides = [
     { url: imgJPinterview, title: "img1" },
-    // { url: sliderImg2, title: "img2" },
+
     { url: imgVan, title: "img3" },
   ];
 
   return (
     <div className="image-slider-container">
       <div className="image-slider">
-        <Swiper className="main-image" autoplay={{ delay: 2000 }} modules={[Pagination, Autoplay]} pagination={true}>
+        <Swiper className="main-image" autoplay={{ delay: 2500 }} modules={[Pagination, Autoplay]} pagination={true}>
           {slides.map((slide, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={slide.url} />
+                <img src={slide.url} alt="?" />
               </SwiperSlide>
             );
           })}

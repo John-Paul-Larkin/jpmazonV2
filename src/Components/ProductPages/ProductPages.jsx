@@ -51,7 +51,7 @@ export default function ProductPages() {
               {product.images.map((image, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <img src={image} />
+                    <img src={image} alt="product image" />
                   </SwiperSlide>
                 );
               })}
@@ -61,7 +61,7 @@ export default function ProductPages() {
               {product.images.map((image, index) => {
                 return (
                   <SwiperSlide key={index} className="thumb-swipe">
-                    <img src={image} />
+                    <img src={image} alt="product image" />
                   </SwiperSlide>
                 );
               })}
