@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" eaxact element={<Body />} />
           <Route path="/product/test" element={<Test />} />
-          <Route path="/" element={<Body />} />
           <Route path="/product/:id" element={<ProductPages />} />
         </Routes>
 
