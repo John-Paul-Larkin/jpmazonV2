@@ -13,30 +13,30 @@ export default function CategoryPage() {
     navigate(url);
   };
 
-  if (data) {
-    console.log(data.products);
-  }
   return (
-    <div className="category-page">
-      <div className="category-heading"> {category}</div>
-      {data &&
-        data.products.map((product) => {
-          return (
-            <div
-              className="category-page-individual-container"
-              key={product.id}
-              onClick={() => {
-                navigateTo(`/product/${product.id}`);
-              }}
-            >
-              <div className="container-internal">
-                <div className="title">{product.title}</div>
-                <StarRating className="rating" rating={product.rating} />
-                <img src={product.thumbnail} alt="thumb" />
+    <div>
+      <h2 className="category-heading"> {category}</h2>
+      <div className="category-page">
+        {data &&
+          data.products.map((product) => {
+            return (
+              <div
+                className="category-page-individual-container"
+                key={product.id}
+                onClick={() => {
+                  navigateTo(`/product/${product.id}`);
+                }}
+              >
+                <div className="container-internal">
+                  <div className="title">{product.title}</div>
+                  <StarRating className="rating" rating={product.rating} />
+                  <img src={product.thumbnail} alt="thumb" />
+                </div>
+                <div className="description">{product.description}</div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 }

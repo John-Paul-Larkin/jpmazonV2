@@ -5,3 +5,7 @@
 .category-side-bar .category {
   padding: 0.6em;
 }
+
+.category-side-bar .category:hover {
+  background-color: #eeeeee;
+}

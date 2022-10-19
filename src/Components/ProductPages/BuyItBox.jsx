@@ -82,8 +82,8 @@ export default function BuyItBox({ product }) {
           </div>
 
           <div>
-            <span className="c1">Customer serice</span>
-            <span>Some bloke</span>
+            <span className="c1">Customer service</span>
+            <span>Our dedicated team</span>
           </div>
           <div>
             <span className="c1">Return policy</span>

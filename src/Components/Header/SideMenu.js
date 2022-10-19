@@ -14,15 +14,9 @@ export default function SideMenu({ showSideMenu, isShowSideMenu }) {
             <i className="fa-regular fa-user"></i>
           </div>
         </div>
-        <div className="side-links">
-          <h2 className="trending">Trending</h2>
-          <div>Best sellers</div>
-          <div>New releases</div>
-          <div>Movers and shakers</div>
-        </div>
         <div className="category-side">
           <h2>Shop by category</h2>
-          <CategorySidebar />
+          <CategorySidebar showSideMenu={showSideMenu} />
         </div>
       </div>
 

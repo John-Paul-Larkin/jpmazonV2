@@ -1,7 +1,7 @@
 .category-nav {
   height: 45px;
   width: 100%;
-  background-color: var(--nav-secondary);
+  background-color: var(--nav-primary);
   color: white;
   display: flex;
   align-items: center;
@@ -65,6 +65,10 @@
 }
 
 @media screen and (min-width: 770px) {
+  .category-nav .category-scroll {
+    background-color: var(--nav-secondary);
+  }
+
   .deliver-to-mobile {
     display: none;
   }

@@ -6,14 +6,18 @@ import useFetchData from "../../Hooks/useFetchData";
 import { Link } from "react-router-dom";
 import SearchResult from "./SearchResult";
 import { useNavigate } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 
 export default function MainNav() {
   const [isShowSideMenu, setIsShowSideMenu] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-
   const { data: searchResult } = useFetchData(`https://dummyjson.com/products/search?&q=${searchTerm}`);
+
+  const handlers = useSwipeable({
+    trackMouse: true,
+    onSwipedRight: () => setIsShowSideMenu(true),
+  });
 
   const showSearchResult = () => {
     if (showSearch) {
@@ -39,7 +43,7 @@ export default function MainNav() {
   };
 
   return (
-    <nav className="main-nav-container">
+    <nav {...handlers} className="main-nav-container">
       <SideMenu showSideMenu={showSideMenu} isShowSideMenu={isShowSideMenu} />
 
       <div className="nav-top">

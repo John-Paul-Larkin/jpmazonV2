@@ -25,24 +25,14 @@
   left: -300px;
 }
 
-.side-menu-container .side-links {
-  border-bottom: 1px solid #d5dbdb;
-}
-
 .side-menu-container .category-side {
   border-bottom: 1px solid #d5dbdb;
-  height: 30em;
 }
 
 .side-menu-container h2 {
   padding: 1em;
   padding-left: 20px;
   color: black;
-}
-
-.side-menu-container .side-links div {
-  padding: 1em;
-  padding-left: 20px;
 }
 
 .side-menu-container .sideLinks div:last-child {
