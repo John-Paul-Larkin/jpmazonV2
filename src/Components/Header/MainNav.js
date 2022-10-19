@@ -4,15 +4,25 @@ import SideMenu from "./SideMenu";
 import useFetchData from "../../Hooks/useFetchData";
 
 import { Link } from "react-router-dom";
+import SearchResult from "./SearchResult";
+import { useNavigate } from "react-router-dom";
 
 export default function MainNav() {
   const [isShowSideMenu, setIsShowSideMenu] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
-  const { data: searchResult } = useFetchData(`https://dummyjson.com/products/search?q=${searchTerm}`);
+  const { data: searchResult } = useFetchData(`https://dummyjson.com/products/search?&q=${searchTerm}`);
 
-  console.log(searchResult);
+  const showSearchResult = () => {
+    if (showSearch) {
+      setShowSearch(false);
+      setSearchTerm("");
+    } else {
+      setShowSearch(true);
+    }
+  };
 
   const searchInput = (e) => {
     const searchFor = e.target.value;
@@ -21,6 +31,11 @@ export default function MainNav() {
 
   const showSideMenu = () => {
     isShowSideMenu ? setIsShowSideMenu(false) : setIsShowSideMenu(true);
+  };
+
+  const navigate = useNavigate();
+  const navigateTo = (url) => {
+    navigate(url);
   };
 
   return (
@@ -52,10 +67,21 @@ export default function MainNav() {
 
         <div className="search-container">
           <form className="search-form">
-            <input className="input" type="text" value={searchTerm} placeholder="  Search JPmazon.ie" onChange={searchInput} />
-            <div className="magnifying-glass">
+            <input className="input" type="text" value={searchTerm} placeholder="  Search JPmazon.ie" onChange={searchInput} onFocus={showSearchResult} />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                if (searchResult.products[0]) {
+                  navigateTo(`/product/${searchResult.products[0].id}`);
+                }
+                setSearchTerm("");
+              }}
+              className="magnifying-glass"
+            >
               <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
+            </button>
+
+            {showSearch && <SearchResult results={searchResult} searchTerm={searchTerm} showSearchResult={showSearchResult} />}
           </form>
         </div>
         <div className="currency">dr</div>

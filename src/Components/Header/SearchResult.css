@@ -1,0 +1,23 @@
+.search-results {
+  position: absolute;
+
+  width: calc(100% - 44px);
+  height: fit-content;
+  max-height: 15em;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid grey;
+  color: black;
+  font-weight: 700;
+  z-index: 9;
+  top: 48px;
+  padding-left: 1em;
+}
+
+.individual-search {
+  padding: 0.5em;
+}
+
+.individual-search:hover {
+  background-color: #eeeeee;
+}

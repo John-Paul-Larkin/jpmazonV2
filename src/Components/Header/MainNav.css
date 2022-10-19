@@ -61,6 +61,7 @@
   margin-top: 0.3em;
   background-color: white;
   border-radius: 5px;
+  position: relative;
 }
 
 .main-nav-container .fa-magnifying-glass {
@@ -73,6 +74,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+.main-nav-container .magnifying-glass {
+  padding: 0;
+  border: none;
 }
 
 .main-nav-container .input {
@@ -134,7 +139,7 @@
   }
 
   .main-nav-container {
-    height: 50px;
+    height: 60px;
   }
 
   .flex-divider-mobile {
@@ -183,12 +188,9 @@
     height: 99px;
   }
 }
-/* 
 
-.search-container::after {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  content: "das";
-  display: inline-block;
-} */
+@media (max-width: 830px) {
+  .address-container {
+    /* display: ord; */
+  }
+}

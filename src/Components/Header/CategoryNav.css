@@ -1,7 +1,7 @@
 .category-nav {
   height: 45px;
   width: 100%;
-  background-color: var(--nav-primary);
+  background-color: var(--nav-secondary);
   color: white;
   display: flex;
   align-items: center;
