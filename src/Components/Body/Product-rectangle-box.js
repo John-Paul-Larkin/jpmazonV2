@@ -14,7 +14,6 @@ export default function ProductRectangleBox({ products, box }) {
             className="individual-image"
             key={product.id}
             onClick={() => {
-              console.log("ss");
               navigateTo(`/product/${product.id}`);
             }}
           >

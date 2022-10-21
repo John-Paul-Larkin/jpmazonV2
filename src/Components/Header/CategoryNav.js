@@ -22,7 +22,6 @@ export default function CategoryNav() {
                   data-category={category}
                   key={category}
                   onClick={() => {
-                    console.log(category);
                     navigateTo(`/category/${category}`);
                   }}
                 >

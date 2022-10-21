@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./MainNav.css";
 import SideMenu from "./SideMenu";
 import useFetchData from "../../Hooks/useFetchData";
+import { ShoppingBasketContext } from "../../Hooks/useContext";
 
 import { Link } from "react-router-dom";
 import SearchResult from "./SearchResult";
@@ -13,6 +14,8 @@ export default function MainNav() {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const { data: searchResult } = useFetchData(`https://dummyjson.com/products/search?&q=${searchTerm}`);
+
+  const { basket } = useContext(ShoppingBasketContext);
 
   const handlers = useSwipeable({
     trackMouse: true,
@@ -89,8 +92,13 @@ export default function MainNav() {
           </form>
         </div>
         <div className="currency">dr</div>
-        <div className="basket-container">
-          <i className="fa-solid fa-cart-shopping"></i>
+        <div
+          className="basket-container"
+          onClick={() => {
+            navigateTo("/basket");
+          }}
+        >
+          <i className="fa-solid fa-cart-shopping">{basket.length > 0 && <div className="no-items-in-cart"> {basket.length} </div>}</i>
           <div className="basket">Basket</div>
         </div>
       </div>

@@ -189,8 +189,18 @@
   }
 }
 
-@media (max-width: 830px) {
-  .address-container {
-    /* display: ord; */
-  }
+.basket-container i {
+  position: relative;
+}
+
+.main-nav-container .no-items-in-cart {
+  position: absolute;
+  top: -2px;
+  left: 37px;
+  z-index: 1;
+  color: #ff9700;
+}
+
+.basket {
+  padding-left: 0.3em;
 }

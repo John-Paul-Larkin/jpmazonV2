@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import React, { useState } from "react";
 import "./App.css";
 
 import Body from "./Components/Body/Body";
@@ -7,19 +7,25 @@ import Header from "./Components/Header/Header";
 import ProductPages from "./Components/ProductPages/ProductPages";
 import Footer from "./Components/Footer/Footer";
 import CategoryPage from "./Components/ProductPages/CategoryPage";
+import { ShoppingBasketContext } from "./Hooks/useContext";
+import ShoppingBasket from "./Components/ProductPages/ShoppingBasket";
 
 function App() {
+  const [basket, setBasket] = useState([]);
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" exact element={<Body />} />
-          <Route path="/product/:id" element={<ProductPages />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
-        </Routes>
+        <ShoppingBasketContext.Provider value={{ basket, setBasket }}>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Body />} />
+            <Route path="/product/:id" element={<ProductPages />} />
+            <Route path="/category/:category" element={<CategoryPage />} />
+            <Route path="/basket" element={<ShoppingBasket />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </ShoppingBasketContext.Provider>
       </div>
     </BrowserRouter>
   );

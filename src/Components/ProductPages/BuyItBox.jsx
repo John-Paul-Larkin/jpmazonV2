@@ -1,30 +1,45 @@
 import addDays from "date-fns/addDays";
+import { ShoppingBasketContext } from "../../Hooks/useContext";
 import "./BuyItBox.css";
+import { useContext, useRef } from "react";
 
 export default function BuyItBox({ product }) {
+  const { basket, setBasket } = useContext(ShoppingBasketContext);
+  const quantity = useRef();
+
+  //calculates price before discount
   const oldPrice = () => {
     return Math.round((product.price / 85) * 100 * 100) / 100;
-    //calculates price before discount
   };
 
+  //Adds on two decimal places as all the API product price are whole integers
+  //Added ten here so there will be no number below 10, which would be single digit €12.8 instead €12.80
   const productPrice = (price) => {
     return price + "." + (Math.floor(Math.random() * 90) + 10);
-    //Adds on two decimal places as all the API product price are whole integers
-    //Added ten here so there will be no number below 10, which would be single digit €12.8 instead €12.80
   };
 
   const getItemBy = () => {
     const today = new Date();
-
     const howManyDayForDelivery = Math.floor(Math.random() * 5) + 1;
     //A random number of days between 1 and 6 for delivery
-
     let deliveryDate = addDays(today, howManyDayForDelivery);
     deliveryDate = deliveryDate.toString();
     deliveryDate = deliveryDate.slice(0, deliveryDate.indexOf("2022"));
     // Make date object a string and slice off unnecessary parts
-
     return "Get it as soon as " + deliveryDate;
+  };
+
+  const addToBasket = () => {
+    const productDeatailsForBasket = {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      quantity: quantity.current.value,
+      thumbnail: product.thumbnail,
+    };
+    setBasket((prevState) => {
+      return [...prevState, productDeatailsForBasket];
+    });
   };
 
   return (
@@ -50,20 +65,22 @@ export default function BuyItBox({ product }) {
         <div className="delivery"></div>
         <div className="fastest-delivery"></div>
 
-        <select className="quantity" name="Qty">
-          <option value="Qty: 1">Qty:1</option>
-          <option value="Qty: 1">Qty:2</option>
-          <option value="Qty: 1">Qty:3</option>
-          <option value="Qty: 1">Qty:4</option>
-          <option value="Qty: 1">Qty:5</option>
-          <option value="Qty: 1">Qty:6</option>
-          <option value="Qty: 1">Qty:7</option>
-          <option value="Qty: 1">Qty:8</option>
-          <option value="Qty: 1">Qty:9</option>
-          <option value="Qty: 1">Qty:10</option>
+        <select className="quantity" name="Qty" ref={quantity}>
+          <option value="1">Qty:1</option>
+          <option value="2">Qty:2</option>
+          <option value="3">Qty:3</option>
+          <option value="4">Qty:4</option>
+          <option value="5">Qty:5</option>
+          <option value="6">Qty:6</option>
+          <option value="7">Qty:7</option>
+          <option value="8">Qty:8</option>
+          <option value="9">Qty:9</option>
+          <option value="10">Qty:10</option>
         </select>
       </div>
-      <button className="add-to-basket">Add to Basket</button>
+      <button className="add-to-basket" onClick={addToBasket}>
+        Add to Basket
+      </button>
       <button className="buy-now">Buy now</button>
       <div>
         <div className="details-container-2">
