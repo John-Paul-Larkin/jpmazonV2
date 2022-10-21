@@ -7,7 +7,7 @@ export default function ShoppingBasket() {
   const { basket } = useContext(ShoppingBasketContext);
 
   const totalQuantityOfItems = () => {
-    if (basket.length == 0) {
+    if (basket.length === 0) {
       return 0;
     } else {
       let total = 0;
