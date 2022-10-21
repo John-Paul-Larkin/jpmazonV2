@@ -9,6 +9,14 @@
   height: 2.7em;
 }
 
+.buy-it-box .add-to-basket:hover {
+  background-color: #f7ca00;
+}
+
+.buy-it-box .buy-now:hover {
+  background-color: #fa8900;
+}
+
 .buy-it-box .buy-now {
   background-color: hsl(36, 100%, 55%);
   box-shadow: 1px 1px 1px hsl(36, 100%, 55%);
@@ -33,8 +41,11 @@
 
 .buy-it-box .price-container,
 .rrp,
-.deliver-to,
-.stock {
+.deliver-to {
+  padding: 1em;
+}
+
+.buy-it-box .stock {
   padding: 1em;
 }
 
