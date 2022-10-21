@@ -32,7 +32,7 @@ export default function ShoppingBasketItems({ item }) {
                 item.quantity = e.target.value;
 
                 basket.map((eachItem) => {
-                  if (eachItem.id == item.id) {
+                  if (eachItem.id === item.id) {
                     eachItem.quantity = e.target.value;
                   }
                   return eachItem;
@@ -54,7 +54,7 @@ export default function ShoppingBasketItems({ item }) {
             </select>
             <div
               onClick={() => {
-                const newBasket = basket.filter((basketItem) => basketItem.id != item.id);
+                const newBasket = basket.filter((basketItem) => basketItem.id !== item.id);
                 setBasket([...newBasket]);
               }}
             >
