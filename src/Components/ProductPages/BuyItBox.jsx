@@ -4,7 +4,7 @@ import "./BuyItBox.css";
 import { useContext, useRef } from "react";
 
 export default function BuyItBox({ product }) {
-  const { basket, setBasket } = useContext(ShoppingBasketContext);
+  const { setBasket } = useContext(ShoppingBasketContext);
   const quantity = useRef();
 
   //calculates price before discount
