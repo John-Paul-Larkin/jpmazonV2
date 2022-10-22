@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./ShoppingBasket.css";
 
+import { useNavigate } from "react-router-dom";
+
 import { ShoppingBasketContext } from "../../Hooks/useContext";
 import { useContext } from "react";
 
@@ -9,11 +11,22 @@ export default function ShoppingBasketItems({ item }) {
 
   const [quantity, setQuantity] = useState(item.quantity);
 
+  const navigate = useNavigate();
+  const navigateTo = (url) => {
+    navigate(url);
+  };
+
   return (
     <>
       <div className="item">
         <div className="img-container">
-          <img src={item.thumbnail} alt="item basket pic" />
+          <img
+            src={item.thumbnail}
+            alt="item basket pic"
+            onClick={() => {
+              navigateTo(`/product/${item.id}`);
+            }}
+          />
         </div>
         <div className="order-details">
           <div className="title-container">

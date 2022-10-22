@@ -12,6 +12,7 @@
 .shopping-basket .item img {
   height: 190px;
   margin: 1em auto;
+  cursor: pointer;
 }
 
 .shopping-basket .img-container {
