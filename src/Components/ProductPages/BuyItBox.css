@@ -9,8 +9,26 @@
   height: 2.7em;
 }
 
+.buy-it-box .center-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.buy-it-box .item-added {
+  display: none;
+  position: absolute;
+  font-size: 2em;
+  height: 4.6em;
+  width: 10em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: -240px;
+  border-radius: 30px;
+}
+
 .buy-it-box .add-to-basket:hover {
-  background-color: #f7ca00;
+  background-color: rgb(247, 202, 0);
 }
 
 .buy-it-box .buy-now:hover {
@@ -92,9 +110,6 @@
   height: 2.7em;
   border: 1px solid grey;
   box-shadow: 2px 2px 2px grey;
-}
-
-.buy-it-box {
 }
 
 .buy-it-box {

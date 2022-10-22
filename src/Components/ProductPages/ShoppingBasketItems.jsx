@@ -37,6 +37,10 @@ export default function ShoppingBasketItems({ item }) {
                   }
                   return eachItem;
                 });
+
+                //test..............
+                localStorage.setItem("JpmazonBasket", JSON.stringify(basket));
+
                 setBasket([...basket]);
                 setQuantity(e.target.value);
               }}
@@ -53,8 +57,11 @@ export default function ShoppingBasketItems({ item }) {
               <option value="10">Qty: 10</option>
             </select>
             <div
+              className="delete"
               onClick={() => {
                 const newBasket = basket.filter((basketItem) => basketItem.id !== item.id);
+                //test..............
+                localStorage.setItem("JpmazonBasket", JSON.stringify(newBasket));
                 setBasket([...newBasket]);
               }}
             >

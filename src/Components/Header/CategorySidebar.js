@@ -21,7 +21,7 @@ export default function CategorySidebar({ showSideMenu }) {
               className="category"
               onClick={() => {
                 showSideMenu();
-                console.log("worked");
+                
                 navigateTo(`/category/${category}`);
               }}
             >

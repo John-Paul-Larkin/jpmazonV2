@@ -2,10 +2,17 @@ import addDays from "date-fns/addDays";
 import { ShoppingBasketContext } from "../../Hooks/useContext";
 import "./BuyItBox.css";
 import { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BuyItBox({ product }) {
-  const { setBasket } = useContext(ShoppingBasketContext);
+  const { basket, setBasket } = useContext(ShoppingBasketContext);
   const quantity = useRef();
+  const itemAddedTobasketMessage = useRef(null);
+
+  const navigate = useNavigate();
+  const navigateTo = (url) => {
+    navigate(url);
+  };
 
   //calculates price before discount
   const oldPrice = () => {
@@ -29,17 +36,30 @@ export default function BuyItBox({ product }) {
     return "Get it as soon as " + deliveryDate;
   };
 
-  const addToBasket = () => {
-    const productDeatailsForBasket = {
-      id: product.id,
-      title: product.title,
-      price: product.price,
-      quantity: quantity.current.value,
-      thumbnail: product.thumbnail,
-    };
-    setBasket((prevState) => {
-      return [...prevState, productDeatailsForBasket];
-    });
+  const addToBasket = (e) => {
+    const itemAlreadyInBasket = basket.filter((item) => item.id === product.id);
+    //dont add product to cart if it is already in.
+    if (!itemAlreadyInBasket.length) {
+      const productDeatailsForBasket = {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        quantity: quantity.current.value,
+        thumbnail: product.thumbnail,
+      };
+
+      const updatedBasket = [...basket, productDeatailsForBasket];
+      localStorage.setItem("JpmazonBasket", JSON.stringify(updatedBasket));
+      setBasket(updatedBasket);
+
+      //convoluted method of selecting the elemenet which will
+      //diplay an item has been added to the cart
+      // e.target.lastChild.firstChild.style.display = "inline-block";
+      itemAddedTobasketMessage.current.style.display = "inline-block";
+      setTimeout(() => {
+        e.target.lastChild.firstChild.style.display = "none";
+      }, 1500);
+    }
   };
 
   return (
@@ -78,10 +98,28 @@ export default function BuyItBox({ product }) {
           <option value="10">Qty:10</option>
         </select>
       </div>
-      <button className="add-to-basket" onClick={addToBasket}>
+      <button
+        className="add-to-basket"
+        onClick={(e) => {
+          addToBasket(e);
+        }}
+      >
         Add to Basket
+        <div className="center-wrapper">
+          <div className="item-added" ref={itemAddedTobasketMessage}>
+            Item added to basket
+          </div>
+        </div>
       </button>
-      <button className="buy-now">Buy now</button>
+      <button
+        className="buy-now"
+        onClick={() => {
+          addToBasket();
+          navigateTo("/basket");
+        }}
+      >
+        Buy now
+      </button>
       <div>
         <div className="details-container-2">
           <i className="fa-solid fa-lock"></i>

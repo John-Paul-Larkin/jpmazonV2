@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import Body from "./Components/Body/Body";
@@ -12,6 +12,9 @@ import ShoppingBasket from "./Components/ProductPages/ShoppingBasket";
 
 function App() {
   const [basket, setBasket] = useState([]);
+
+  const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
+  useEffect(() => setBasket(localStoreBasket), []);
   return (
     <BrowserRouter>
       <div className="App">
