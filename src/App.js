@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ShoppingBasketContext } from "./Hooks/useContext";
 
 import Body from "./Components/Body/Body";
@@ -14,7 +14,7 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   const [basket, setBasket] = useState([]);
 
-  const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
+  // const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
   // useEffect(() => {
   //   setBasket(localStoreBasket);
   // }, []);
