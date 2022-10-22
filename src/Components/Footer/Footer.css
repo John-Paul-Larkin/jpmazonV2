@@ -151,4 +151,5 @@
   z-index: 9;
   border-radius: 20px;
   padding: 1em;
+  min-width: 200px;
 }
