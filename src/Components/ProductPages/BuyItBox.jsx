@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function BuyItBox({ product }) {
   const { basket, setBasket } = useContext(ShoppingBasketContext);
   const quantity = useRef();
-  const itemAddedTobasketMessage = useRef(null);
+  const addedMessage = useRef(null);
 
   const navigate = useNavigate();
   const navigateTo = (url) => {
@@ -55,7 +55,7 @@ export default function BuyItBox({ product }) {
       //convoluted method of selecting the elemenet which will
       //diplay an item has been added to the cart
       // e.target.lastChild.firstChild.style.display = "inline-block";
-      itemAddedTobasketMessage.current.style.display = "inline-block";
+      addedMessage.current.style.display = "inline-block";
       setTimeout(() => {
         e.target.lastChild.firstChild.style.display = "none";
       }, 1500);
@@ -106,7 +106,7 @@ export default function BuyItBox({ product }) {
       >
         Add to Basket
         <div className="center-wrapper">
-          <div className="item-added" ref={itemAddedTobasketMessage}>
+          <div className="item-added" ref={addedMessage}>
             Item added to basket
           </div>
         </div>

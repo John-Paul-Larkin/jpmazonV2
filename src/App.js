@@ -1,20 +1,25 @@
+import "./App.css";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import { ShoppingBasketContext } from "./Hooks/useContext";
 
 import Body from "./Components/Body/Body";
 import Header from "./Components/Header/Header";
 import ProductPages from "./Components/ProductPages/ProductPages";
-import Footer from "./Components/Footer/Footer";
 import CategoryPage from "./Components/ProductPages/CategoryPage";
-import { ShoppingBasketContext } from "./Hooks/useContext";
 import ShoppingBasket from "./Components/ProductPages/ShoppingBasket";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [basket, setBasket] = useState([]);
 
   const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
-  useEffect(() => setBasket(localStoreBasket), []);
+  useEffect(() => {
+    setBasket(localStoreBasket);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
