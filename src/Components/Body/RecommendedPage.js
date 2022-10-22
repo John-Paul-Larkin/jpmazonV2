@@ -22,16 +22,15 @@ export default function RecommendedPage({ products }) {
 
   return (
     <div className="product-card-container">
-      {/* <ProductRectangleFirst products={products} /> */}
+      <ReviewCarousel products={productArray.splice(0, 18)} />
+      <br />
+      <br />
+      <br />
       <div className="product-rectangle-first">
         <ProductRectangleBox products={productArray.splice(0, 4)} box={"one"} />
         <ProductRectangleBox products={productArray.splice(0, 4)} box={"two"} />
         <ProductRectangleBox products={productArray.splice(0, 4)} box={"three"} />
       </div>
-      <br />
-      <br />
-      <br />
-      <ReviewCarousel products={productArray.splice(0, 18)} />
     </div>
   );
 }

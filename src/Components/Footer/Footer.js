@@ -1,12 +1,27 @@
 import "./Footer.css";
 import flag from "../../Assets/IE24.png";
+import { useRef } from "react";
+
 export default function Footer() {
+  const message = useRef(null);
+
+  const displayNothingWorksMsg = () => {
+    message.current.style.display = "flex";
+
+    setTimeout(() => {
+      message.current.style.display = "none";
+    }, 2300);
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer" onClick={displayNothingWorksMsg}>
       <a href="#top" className="footer-top">
         Back to top
       </a>
       <div className="footer-middle">
+        <div className="nothing-works" ref={message}>
+          <div>Oops..... seems like nothing down here works</div>
+        </div>
         <div className="info-container">
           <div className="column one">
             <div className="heading">Let us help you</div>
@@ -63,7 +78,7 @@ export default function Footer() {
           {/* <div>🌐 Anglaise</div> */}
           <div> € EUR - Euro</div>
           <div className="irl">
-            <img src={flag} alt="Irish flag"/>
+            <img src={flag} alt="Irish flag" />
             Ireland
           </div>
         </div>

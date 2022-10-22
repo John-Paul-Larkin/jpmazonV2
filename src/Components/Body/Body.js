@@ -13,6 +13,7 @@ export default function Body() {
         <div className="main-body">
           <ImageSlider />
           <div className="stretcher"></div>
+          {/* strethcer adds mediaQ based space between elements so hero displays correctly */}
           <RecommendedPage products={returned.products} />
           <br />
           <br />
