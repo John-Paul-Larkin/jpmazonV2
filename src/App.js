@@ -15,9 +15,9 @@ function App() {
   const [basket, setBasket] = useState([]);
 
   const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
-  useEffect(() => {
-    setBasket(localStoreBasket);
-  }, []);
+  // useEffect(() => {
+  //   setBasket(localStoreBasket);
+  // }, []);
 
   return (
     <BrowserRouter>
