@@ -3,14 +3,16 @@ import flag from "../../Assets/IE24.png";
 import { useRef } from "react";
 
 export default function Footer() {
-  const message = useRef(null);
+  const messageDiv = useRef(null);
 
-  const displayNothingWorksMsg = () => {
-    message.current.style.display = "flex";
-
-    setTimeout(() => {
-      message.current.style.display = "none";
-    }, 2300);
+  const displayNothingWorksMsg = (e) => {
+    console.log(e.target.className);
+    if (e.target.className === "") {
+      messageDiv.current.style.display = "flex";
+      setTimeout(() => {
+        messageDiv.current.style.display = "none";
+      }, 2300);
+    }
   };
 
   return (
@@ -19,9 +21,13 @@ export default function Footer() {
         Back to top
       </a>
 
-      <div onClick={displayNothingWorksMsg}>
+      <div
+        onClick={(e) => {
+          displayNothingWorksMsg(e);
+        }}
+      >
         <div className="footer-middle">
-          <div className="nothing-works" ref={message}>
+          <div className="nothing-works" ref={messageDiv}>
             <div>Oops..... seems like nothing down here works</div>
           </div>
           <div className="info-container">

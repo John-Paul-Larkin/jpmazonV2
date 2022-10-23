@@ -45,6 +45,7 @@
 }
 
 .footer .footer-middle .column div {
+  width: fit-content;
   font-size: 0.7em;
   margin: 0.5em 0;
   color: var(--background-grey);

@@ -1,6 +1,6 @@
 import useFetchData from "../../Hooks/useFetchData";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./ProductPages.css";
 
@@ -24,13 +24,17 @@ export default function ProductPages() {
 
   const [isShowMore, setIsShowMore] = useState(false);
 
-  const showMore = () => {
+  const showMoreDescription = () => {
     if (isShowMore) {
       setIsShowMore(false);
     } else {
       setIsShowMore(true);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -87,7 +91,7 @@ export default function ProductPages() {
                   </span>
                 )}
               </p>
-              <button onClick={showMore}>
+              <button onClick={showMoreDescription}>
                 <i className="fa-solid fa-angles-down"></i>
               </button>
             </div>

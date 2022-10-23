@@ -50,7 +50,10 @@ export default function ShoppingBasketItems({ item }) {
         <div className="order-details">
           <div className="title-container">
             <div className="title">{item.title}</div>
-            <span className="price">EUR {item.price}.00</span>
+            <span className="price-container">
+              <span className="price">EUR {item.price}.00</span>
+              {item.quantity > 1 && <div className="subtotal">Sub-total {item.price * item.quantity}.00</div>}
+            </span>
           </div>
 
           <div className="stock">In stock</div>
@@ -84,6 +87,7 @@ export default function ShoppingBasketItems({ item }) {
               Delete
             </div>
             <div
+              className="save"
               onClick={() => {
                 //possibly add save list functionality at a later date
                 removeItemsFromBasket();
