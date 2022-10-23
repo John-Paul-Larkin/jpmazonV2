@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom";
 export default function CategoryNav() {
   const { data: catagories } = useFetchData("https://dummyjson.com/products/categories");
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
 
   return (
     <>
@@ -22,7 +19,7 @@ export default function CategoryNav() {
                   data-category={category}
                   key={category}
                   onClick={() => {
-                    navigateTo(`/category/${category}`);
+                    navigate(`/category/${category}`);
                   }}
                 >
                   {startCase(category)}

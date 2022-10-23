@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="column two">
               <div className="heading">Make Money on Jpmazon</div>
               <div>Sell on JPmazon</div>
-              <div>Sell on JPpmazon Business</div>
+              <div>Sell on JPmazon Business</div>
               <div>Sell on JPmazon handmade</div>
               <div>Sell on JPmazon launchpad</div>
               <div>Associates program</div>

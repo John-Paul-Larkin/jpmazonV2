@@ -46,9 +46,6 @@ const leftInStock = (stock) => {
 
 export default function ReviewCarousel({ products }) {
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
 
   return (
     <div className="review-carousel-container">
@@ -60,7 +57,7 @@ export default function ReviewCarousel({ products }) {
                 <div
                   onClick={() => {
                     const id = product.id;
-                    navigateTo(`/product/${id}`);
+                    navigate(`/product/${id}`);
                   }}
                 >
                   <div className="product-description">{limitDescription(product.description)}</div>

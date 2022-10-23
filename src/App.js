@@ -15,9 +15,13 @@ function App() {
   const [basket, setBasket] = useState([]);
 
   const localStoreBasket = JSON.parse(localStorage.getItem("JpmazonBasket"));
+  console.log(localStoreBasket);
   useEffect(() => {
-    setBasket(localStoreBasket);
+    if (localStoreBasket) {
+      setBasket(localStoreBasket);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // added because i eslint was giving a warning
   }, []);
 
   return (

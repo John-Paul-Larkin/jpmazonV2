@@ -7,12 +7,9 @@ import { useNavigate } from "react-router-dom";
 export default function BuyItBox({ product }) {
   const { basket, setBasket } = useContext(ShoppingBasketContext);
   const quantity = useRef();
-  const addedMessage = useRef(null);
+  const itemAddedMessageDiv = useRef(null);
 
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
 
   //calculates price before discount
   const oldPrice = () => {
@@ -36,7 +33,7 @@ export default function BuyItBox({ product }) {
     return "Get it as soon as " + deliveryDate;
   };
 
-  const addToBasket = (e) => {
+  const addToBasket = () => {
     const itemAlreadyInBasket = basket.filter((item) => item.id === product.id);
     //dont add product to cart if it is already in.
     if (!itemAlreadyInBasket.length) {
@@ -52,12 +49,9 @@ export default function BuyItBox({ product }) {
       localStorage.setItem("JpmazonBasket", JSON.stringify(updatedBasket));
       setBasket(updatedBasket);
 
-      //convoluted method of selecting the elemenet which will
-      //diplay an item has been added to the cart
-      // e.target.lastChild.firstChild.style.display = "inline-block";
-      addedMessage.current.style.display = "inline-block";
+      itemAddedMessageDiv.current.style.display = "inline-block";
       setTimeout(() => {
-        e.target.lastChild.firstChild.style.display = "none";
+        itemAddedMessageDiv.current.style.display = "none";
       }, 1500);
     }
   };
@@ -106,7 +100,15 @@ export default function BuyItBox({ product }) {
       >
         Add to Basket
         <div className="center-wrapper">
-          <div className="item-added" ref={addedMessage}>
+          {/* display a message when item is added to basket */}
+          {/* which if clicked brings you to basket page */}
+          <div
+            className="item-added"
+            ref={itemAddedMessageDiv}
+            onClick={() => {
+              navigate("/basket");
+            }}
+          >
             Item added to basket
           </div>
         </div>
@@ -115,7 +117,7 @@ export default function BuyItBox({ product }) {
         className="buy-now"
         onClick={() => {
           addToBasket();
-          navigateTo("/basket");
+          navigate("/basket");
         }}
       >
         Buy now

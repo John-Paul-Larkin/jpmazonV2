@@ -41,9 +41,7 @@ export default function MainNav() {
   };
 
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
+ 
 
   return (
     <nav {...handlers} className="main-nav-container">
@@ -79,7 +77,7 @@ export default function MainNav() {
               onClick={(e) => {
                 e.preventDefault();
                 if (searchResult.products[0]) {
-                  navigateTo(`/product/${searchResult.products[0].id}`);
+                  navigate(`/product/${searchResult.products[0].id}`);
                 }
                 setSearchTerm("");
               }}
@@ -95,7 +93,7 @@ export default function MainNav() {
         <div
           className="basket-container"
           onClick={() => {
-            navigateTo("/basket");
+            navigate("/basket");
           }}
         >
           <i className="fa-solid fa-cart-shopping">{basket.length > 0 && <div className="no-items-in-cart"> {basket.length} </div>}</i>

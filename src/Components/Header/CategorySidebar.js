@@ -7,9 +7,6 @@ export default function CategorySidebar({ showSideMenu }) {
   let { data: categories } = useFetchData("https://dummyjson.com/products/categories");
 
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
 
   return (
     <div className="category-side-bar">
@@ -21,8 +18,8 @@ export default function CategorySidebar({ showSideMenu }) {
               className="category"
               onClick={() => {
                 showSideMenu();
-                
-                navigateTo(`/category/${category}`);
+
+                navigate(`/category/${category}`);
               }}
             >
               {startCase(category)}

@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SearchResult({ results, searchTerm, showSearchResult }) {
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
 
   //The result of the search was always in the order of the array of products
   //which resulted in the same items at the top of the array each time.
@@ -32,7 +29,7 @@ export default function SearchResult({ results, searchTerm, showSearchResult }) 
               className="individual-search"
               key={product.id}
               onClick={() => {
-                navigateTo(`/product/${product.id}`);
+                navigate(`/product/${product.id}`);
                 showSearchResult();
               }}
             >

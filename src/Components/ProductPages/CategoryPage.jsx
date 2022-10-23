@@ -1,17 +1,21 @@
 import "./CategoryPage.css";
+
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 import useFetchData from "../../Hooks/useFetchData";
 import StarRating from "../Sitewide/StarRating";
-import { useNavigate } from "react-router-dom";
 
 export default function CategoryPage() {
   const { category } = useParams();
   const { data } = useFetchData(`https://dummyjson.com/products/category/${category}`);
 
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
-  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
@@ -24,7 +28,7 @@ export default function CategoryPage() {
                 className="category-page-individual-container"
                 key={product.id}
                 onClick={() => {
-                  navigateTo(`/product/${product.id}`);
+                  navigate(`/product/${product.id}`);
                 }}
               >
                 <div className="container-internal">
@@ -36,6 +40,7 @@ export default function CategoryPage() {
               </div>
             );
           })}
+        {!data && <div className="loading-skeleton"></div>}
       </div>
     </div>
   );

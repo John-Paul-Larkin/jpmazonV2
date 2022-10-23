@@ -69,3 +69,8 @@ picture {
   font-family: "EmberBD";
   src: url("./Assets/Font/AmazonEmber_Bd.ttf");
 }
+
+.loading-skeleton {
+  height: 100vh;
+  background-color: var(--background-grey);
+}

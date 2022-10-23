@@ -12,19 +12,38 @@ export default function ShoppingBasketItems({ item }) {
   const [quantity, setQuantity] = useState(item.quantity);
 
   const navigate = useNavigate();
-  const navigateTo = (url) => {
-    navigate(url);
+
+  const removeItemsFromBasket = () => {
+    const newBasket = basket.filter((basketItem) => basketItem.id !== item.id);
+    localStorage.setItem("JpmazonBasket", JSON.stringify(newBasket));
+    setBasket([...newBasket]);
+  };
+
+  const updateQuantity = (e) => {
+    item.quantity = e.target.value;
+
+    basket.map((eachItem) => {
+      if (eachItem.id === item.id) {
+        eachItem.quantity = e.target.value;
+      }
+      return eachItem;
+    });
+
+    localStorage.setItem("JpmazonBasket", JSON.stringify(basket));
+    setBasket([...basket]);
+    setQuantity(e.target.value);
   };
 
   return (
     <>
       <div className="item">
         <div className="img-container">
+          {/* CLicking on image takes you from cart to that product */}
           <img
             src={item.thumbnail}
             alt="item basket pic"
             onClick={() => {
-              navigateTo(`/product/${item.id}`);
+              navigate(`/product/${item.id}`);
             }}
           />
         </div>
@@ -42,20 +61,7 @@ export default function ShoppingBasketItems({ item }) {
               name="Qty"
               value={quantity}
               onChange={(e) => {
-                item.quantity = e.target.value;
-
-                basket.map((eachItem) => {
-                  if (eachItem.id === item.id) {
-                    eachItem.quantity = e.target.value;
-                  }
-                  return eachItem;
-                });
-
-                //test..............
-                localStorage.setItem("JpmazonBasket", JSON.stringify(basket));
-
-                setBasket([...basket]);
-                setQuantity(e.target.value);
+                updateQuantity(e);
               }}
             >
               <option value="1">Qty: 1</option>
@@ -72,15 +78,19 @@ export default function ShoppingBasketItems({ item }) {
             <div
               className="delete"
               onClick={() => {
-                const newBasket = basket.filter((basketItem) => basketItem.id !== item.id);
-                //test..............
-                localStorage.setItem("JpmazonBasket", JSON.stringify(newBasket));
-                setBasket([...newBasket]);
+                removeItemsFromBasket();
               }}
             >
               Delete
             </div>
-            <div>Save for later</div>
+            <div
+              onClick={() => {
+                //possibly add save list functionality at a later date
+                removeItemsFromBasket();
+              }}
+            >
+              Save for later
+            </div>
           </div>
         </div>
       </div>

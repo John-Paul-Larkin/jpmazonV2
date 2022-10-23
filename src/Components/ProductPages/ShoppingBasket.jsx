@@ -1,25 +1,25 @@
 import { ShoppingBasketContext } from "../../Hooks/useContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 //components
 import ShoppingBasketItems from "./ShoppingBasketItems";
 
 export default function ShoppingBasket() {
   const { basket } = useContext(ShoppingBasketContext);
 
-  const totalQuantityOfItems = () => {
+  const calculateTotalQuantityOfItems = () => {
     if (basket.length === 0) {
       return 0;
     } else {
-      let total = 0;
-      basket.forEach((item) => (total += parseInt(item.quantity)));
-      return total;
+      let totalQuantity = 0;
+      basket.forEach((item) => (totalQuantity += parseInt(item.quantity)));
+      return totalQuantity;
     }
   };
 
   //calculates the total value and adds .00 for aesthetics
-  const totalValue = () => {
+  const calculateTotalValue = () => {
     if (basket.length === 0) {
-      return "0.00";
+      return "0.00"; //If basket is empty
     } else {
       let total = 0;
       basket.forEach((item) => {
@@ -28,6 +28,10 @@ export default function ShoppingBasket() {
       return total + ".00";
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="shopping-basket">
@@ -40,7 +44,7 @@ export default function ShoppingBasket() {
 
       <div className="sub-total-container">
         <div className="subtotal">
-          Subtotal ({totalQuantityOfItems()} items) <span className="eur">EUR {totalValue()}</span>
+          Subtotal ({calculateTotalQuantityOfItems()} items) <span className="eur">EUR {calculateTotalValue()}</span>
         </div>
       </div>
     </div>

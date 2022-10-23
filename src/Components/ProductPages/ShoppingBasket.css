@@ -1,3 +1,9 @@
+.shopping-basket {
+  max-width: var(--max-body-width);
+  min-width: var(--min-screen-size);
+  margin: 0 auto;
+}
+
 .shopping-basket h2 {
   text-align: center;
   padding: 1em;
@@ -5,7 +11,7 @@
 
 .shopping-basket .item {
   border-bottom: 1px solid grey;
-  height: 220px;
+  height: 240px;
   display: flex;
 }
 
@@ -114,7 +120,8 @@
 
 @media (min-width: 800px) {
   .shopping-basket .item {
-    width: 550px;
+    min-width: 550px;
+    max-width: 70vw;
   }
 
   .shopping-basket .sub-total-container {
