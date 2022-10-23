@@ -121,14 +121,6 @@
   margin: 5em;
 }
 
-@media (min-width: 800px) {
-  .shopping-basket .item {
-  }
-
-  .shopping-basket .sub-total-container {
-  }
-}
-
 .shopping-basket .price {
   /* padding-left: 1em; */
   font-weight: 800;
