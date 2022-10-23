@@ -23,7 +23,7 @@ export default function ImageSlider() {
           {slides.map((slide, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={slide.url} alt="?" />
+                <img src={slide.url} alt="" />
               </SwiperSlide>
             );
           })}
