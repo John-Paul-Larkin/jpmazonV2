@@ -65,7 +65,8 @@
   cursor: pointer;
 }
 
-.product-page-container .images-container {
+.sw-slide{
+  cursor: pointer;
 }
 
 .product-page-container .main-image img {

@@ -57,7 +57,7 @@ export default function ProductPages() {
               <Swiper className="main-image" modules={[FreeMode, Thumbs, Pagination]} pagination={true} thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}>
                 {product.images.map((image, index) => {
                   return (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide className="sw-slide" key={index}>
                       <img src={image} alt="product" />
                     </SwiperSlide>
                   );
