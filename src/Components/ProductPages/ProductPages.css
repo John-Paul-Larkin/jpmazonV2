@@ -55,6 +55,7 @@
 .product-page-container .thumb-swipe {
   /* height: 90%; */
   border: 5px solid white;
+  cursor:pointer;
 }
 
 .product-page-container button {
@@ -65,9 +66,7 @@
   cursor: pointer;
 }
 
-.sw-slide{
-  cursor: pointer;
-}
+
 
 .product-page-container .main-image img {
   width: 100vw !important;
