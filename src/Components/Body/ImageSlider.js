@@ -1,13 +1,13 @@
-import "./ImageSlider.css";
 import imgJPinterview from "../../Assets/primeInterview.png";
 import imgVan from "../../Assets/primeVan.jpg";
+import "./ImageSlider.css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function ImageSlider() {
   const slides = [
@@ -23,7 +23,9 @@ export default function ImageSlider() {
           {slides.map((slide, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={slide.url} alt="" />
+                <a href="https://portfolio-jpl.netlify.app/index.html#email">
+                  <img src={slide.url} alt="" />
+                </a>
               </SwiperSlide>
             );
           })}

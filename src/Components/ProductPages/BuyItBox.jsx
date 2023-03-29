@@ -1,8 +1,8 @@
 import addDays from "date-fns/addDays";
-import { ShoppingBasketContext } from "../../Hooks/useContext";
-import "./BuyItBox.css";
 import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { ShoppingBasketContext } from "../../Hooks/useContext";
+import "./BuyItBox.css";
 
 export default function BuyItBox({ product }) {
   const { basket, setBasket } = useContext(ShoppingBasketContext);
@@ -147,7 +147,9 @@ export default function BuyItBox({ product }) {
             <span className="returnable">Returnable within 30 days of reciept</span>
           </div>
         </div>
-        <button className="prime">Yes baby - sign me up for JP prime</button>
+        <a href="https://portfolio-jpl.netlify.app/index.html#email">
+          <button className="prime">Yes baby - sign me up for JP prime</button>
+        </a>
       </div>
     </div>
   );
